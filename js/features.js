@@ -186,7 +186,17 @@
 
 (function() {
     var KEY = 'keepaliveAudioEnabled';
-    var SRC = '48ec1979ce9723f5f0cecc85bf6e73a9c5be3d45b6b54e4b9d8473c78ffdbd9e.m4a'；
+    var SRC = let _audio;
+function _createAudio() {
+    if (_audio) return _audio;
+    _audio = new Audio('https://raw.githubusercontent.com/qyjsyyj36s9k27/milk/main/48ec1979ce9723f5f0cecc85bf6e73a9c5be3d45b6b54e4b9d8473c78ffdbd9e.m4a');
+    _audio.loop = true;
+    _audio.volume = 0.01;
+    _audio.preload = 'auto';
+    return _audio;
+}
+_createAudio();
+
     var _audio = null;
     var _unlockBound = false;
 
